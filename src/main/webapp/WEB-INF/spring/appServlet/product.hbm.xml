@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.domgen.dto">
+ 
+    <class name="Product" table="PRODUCT">
+        <id name="productId" column="PRODUCT_ID">
+            <generator class="increment" />
+        </id>
+                 
+        <property name="name" type="string" column="NAME" />
+        <property name="price" type="string" column="price" />
+        <property name="discription" type="string" column="DISCRIPTION" />
+         
+    </class>
+</hibernate-mapping>
+
