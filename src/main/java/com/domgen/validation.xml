@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.0//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_0.dtd">
+
+<form-validation>
+	<formset>
+		<form name="indexForm">
+			<field property="userName" depends="required">
+				<arg0 key="userName.text" />
+			</field>
+			<field property="password" depends="required">
+				<arg0 key="password.text" />
+			</field>
+		</form>
+		<form name="invoiceEntryForm">
+			<field property="accountName" depends="required">
+				<arg0 key="accountName.text" />
+			</field>
+			<field property="entryDateDay" depends="required">
+				<arg0 key="entryDateDay.text" />
+			</field>
+			<field property="entryDateMonth" depends="required">
+				<arg0 key="entryDateMonth.text" />
+			</field>		
+			<field property="entryDateYear" depends="required">
+				<arg0 key="entryDateYear.text" />
+			</field>			
+			<field property="invoiceNo" depends="required">
+				<arg0 key="invoiceNo.text" />
+			</field>
+			<field property="financeDivision" depends="required">
+				<arg0 key="financeDivision.text" />
+			</field>
+			<field property="purchaseLedger" depends="required">
+				<arg0 key="purchaseLedger.text" />
+			</field>			
+				<field property="unit" depends="required">
+				<arg0 key="unit.text" />
+			</field>
+			<field property="nature" depends="required">
+				<arg0 key="nature.text" />
+			</field>
+			<field property="transactionType" depends="required">
+				<arg0 key="transactionType.text" />
+			</field>		
+																
+		</form>		
+			<form name="invoiceEditForm">
+			<field property="accountName" depends="required">
+				<arg0 key="accountName.text" />
+			</field>
+			<field property="entryDateDay" depends="required">
+				<arg0 key="entryDateDay.text" />
+			</field>
+			<field property="entryDateMonth" depends="required">
+				<arg0 key="entryDateMonth.text" />
+			</field>		
+			<field property="entryDateYear" depends="required">
+				<arg0 key="entryDateYear.text" />
+			</field>			
+			<field property="invoiceNo" depends="required">
+				<arg0 key="invoiceNo.text" />
+			</field>
+			<field property="financeDivision" depends="required">
+				<arg0 key="financeDivision.text" />
+			</field>
+			<field property="purchaseLedger" depends="required">
+				<arg0 key="purchaseLedger.text" />
+			</field>			
+				<field property="unit" depends="required">
+				<arg0 key="unit.text" />
+			</field>
+			<field property="nature" depends="required">
+				<arg0 key="nature.text" />
+			</field>
+			<field property="transactionType" depends="required">
+				<arg0 key="transactionType.text" />
+			</field>		
+			<field property="comments" depends="required">
+				<arg0 key="comments.text" />
+			</field>																	
+		</form>		
+	</formset>
+</form-validation>

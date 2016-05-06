@@ -1,0 +1,1092 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+                               "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+	<!-- Data Sources -->
+	<data-sources>
+	</data-sources>
+
+	<!-- Form Beans -->
+	<form-beans>
+		<form-bean name="indexForm" type="com.domgen.marketingbudgets.forms.IndexForm">
+		</form-bean>
+		<form-bean name="invoiceEntryForm" type="com.domgen.marketingbudgets.forms.InvoiceEntryForm">
+		</form-bean>
+		<form-bean name="awaitingAuthorisationForm" type="com.domgen.marketingbudgets.forms.AwaitingAuthorisationForm">
+		</form-bean>
+		<form-bean name="invoiceEditSelectionForm" type="com.domgen.marketingbudgets.forms.InvoiceEditSelectionForm">
+		</form-bean>
+		<form-bean name="invoiceEditForm" type="com.domgen.marketingbudgets.forms.InvoiceEditForm">
+		</form-bean>
+		<form-bean name="invoiceBaseForm" type="com.domgen.marketingbudgets.forms.InvoiceBaseForm">
+		</form-bean>
+		<form-bean name="maintenanceAccountsForm" type="com.domgen.marketingbudgets.forms.MaintenanceAccountsForm">
+		</form-bean>
+		<form-bean name="maintenanceFinanceDivisionsForm" type="com.domgen.marketingbudgets.forms.MaintenanceFinanceDivisionsForm">
+		</form-bean>
+		<form-bean name="maintenanceFinanceDivisionsAuditForm" type="com.domgen.marketingbudgets.forms.MaintenanceFinanceDivisionsAuditForm">
+		</form-bean>
+		<form-bean name="maintenancePurchaseLedgersForm" type="com.domgen.marketingbudgets.forms.MaintenancePurchaseLedgersForm">
+		</form-bean>
+		<form-bean name="maintenanceUnitsForm" type="com.domgen.marketingbudgets.forms.MaintenanceUnitsForm">
+		</form-bean>
+		<form-bean name="maintenanceNaturesForm" type="com.domgen.marketingbudgets.forms.MaintenanceNaturesForm">
+		</form-bean>
+		<form-bean name="maintenanceTransactionTypesForm" type="com.domgen.marketingbudgets.forms.MaintenanceTransactionTypesForm">
+		</form-bean>
+		<form-bean name="maintenanceSmaReferencesForm" type="com.domgen.marketingbudgets.forms.MaintenanceSmaReferencesForm">
+		</form-bean>
+		<form-bean name="clientDetailsForm" type="com.domgen.marketingbudgets.forms.ClientDetailsForm">
+		</form-bean>
+		<form-bean name="createActionForm" type="com.domgen.marketingbudgets.forms.CreateActionForm">
+		</form-bean>
+		<form-bean name="invoicesSearchForm" type="com.domgen.marketingbudgets.forms.InvoicesSearchForm">
+		</form-bean>
+		<form-bean name="actionHistoryForm" type="com.domgen.marketingbudgets.forms.ActionHistoryForm">
+		</form-bean>
+		<form-bean name="invoiceAuditForm" type="com.domgen.marketingbudgets.forms.InvoiceAuditForm">
+		</form-bean>
+		<form-bean name="originalInvoiceForm" type="com.domgen.marketingbudgets.forms.OriginalInvoiceForm">
+		</form-bean>
+		<form-bean name="actionDisplayForm" type="com.domgen.marketingbudgets.forms.ActionDisplayForm">
+		</form-bean>
+		<form-bean name="actionEditForm" type="com.domgen.marketingbudgets.forms.ActionEditForm">
+		</form-bean>
+		<form-bean name="maintenanceSSForm" type="com.domgen.marketingbudgets.forms.MaintenanceSSForm">
+		</form-bean>
+		<form-bean name="maintenanceSSAccountsForm" type="com.domgen.marketingbudgets.forms.MaintenanceSSAccountsForm">
+		</form-bean>
+		<form-bean name="maintenanceSSAccountHMsForm" type="com.domgen.marketingbudgets.forms.MaintenanceSSAccountHMsForm">
+		</form-bean>
+		<form-bean name="invoiceAuthoriseSelectionForm" type="com.domgen.marketingbudgets.forms.InvoiceAuthoriseSelectionForm">
+		</form-bean>
+		<form-bean name="invoiceAuthoriseForm" type="com.domgen.marketingbudgets.forms.InvoiceAuthoriseForm">
+		</form-bean>
+		<form-bean name="invoiceAuthorisedSelectionForm" type="com.domgen.marketingbudgets.forms.InvoiceAuthorisedSelectionForm">
+		</form-bean>
+		<form-bean name="invoiceAuthorisedConfirmForm" type="com.domgen.marketingbudgets.forms.InvoiceAuthorisedConfirmForm">
+		</form-bean>
+		<form-bean name="errorForm" type="com.domgen.marketingbudgets.forms.ErrorForm">
+		</form-bean>
+		<form-bean name="budgetsSelectionForm" type="com.domgen.marketingbudgets.forms.BudgetsSelectionForm">
+		</form-bean>
+		<form-bean name="budgetsEditForm" type="com.domgen.marketingbudgets.forms.BudgetsEditForm">
+		</form-bean>
+		<form-bean name="budgetsAuditSelectionForm" type="com.domgen.marketingbudgets.forms.BudgetsAuditSelectionForm">
+		</form-bean>
+		<form-bean name="budgetsAuditForm" type="com.domgen.marketingbudgets.forms.BudgetsAuditForm">
+		</form-bean>
+		<form-bean name="invoiceValidatedSelectionForm" type="com.domgen.marketingbudgets.forms.InvoiceValidatedSelectionForm">
+		</form-bean>
+		<form-bean name="invoiceValidatedConfirmForm" type="com.domgen.marketingbudgets.forms.InvoiceValidatedConfirmForm">
+		</form-bean>
+		<form-bean name="maintenanceSSAdaytumUploadForm" type="com.domgen.marketingbudgets.forms.MaintenanceSSAdaytumUploadForm">
+		</form-bean>
+	</form-beans>
+
+	<!-- Global Exceptions -->
+	<global-exceptions>
+	</global-exceptions>
+
+	<!-- Global Forwards -->
+	<global-forwards>
+	</global-forwards>
+
+	<!-- Action Mappings -->
+	<action-mappings>
+		<action name="indexForm" path="/index" scope="session" type="com.domgen.marketingbudgets.actions.IndexAction" validate="true" input="/index.jsp">
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="ACCUSR" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="ACCMGR" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="UWUSR" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="UWMGR" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="SSUSR" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="SSMGR" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="ACCHDR" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="AHMMGR" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="AHMUSR" path="/actionDisplay.jsp">
+			</forward>
+		</action>
+		<action name="invoiceEntryForm" path="/invoiceEntry" scope="session" type="com.domgen.marketingbudgets.actions.InvoiceEntryAction" validate="true" input="/invoiceEntry.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="confirm" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="cancel" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="calculate" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToActionDisplay" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="goToMaintenanceSS" path="/maintenanceSS.jsp">
+			</forward>
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>			
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>
+		</action>
+		<action name="awaitingAuthorisationForm" path="/awaitingAuthorisation" scope="session" type="com.domgen.marketingbudgets.actions.AwaitingAuthorisationAction" validate="true" input="/awaitingAuthorisation.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="search" path="/awaitingAuthorisation.jsp">
+			</forward>
+			<forward name="sort" path="/awaitingAuthorisation.jsp">
+			</forward>
+			<forward name="displayAll" path="/awaitingAuthorisation.jsp">
+			</forward>
+		</action>
+		<action name="invoiceEditSelectionForm" path="/invoiceEditSelection" scope="session" type="com.domgen.marketingbudgets.actions.InvoiceEditSelectionAction" validate="true" input="/invoiceEditSelection.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="getInvoice" path="/invoiceEdit.jsp">
+			</forward>
+			<forward name="getListOfInvoices" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToActionDisplay" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>			
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>
+		</action>
+		<action name="invoiceEditForm" path="/invoiceEdit" scope="session" type="com.domgen.marketingbudgets.actions.InvoiceEditAction" validate="true" input="/invoiceEdit.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="confirm" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="cancel" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="calculate" path="/invoiceEdit.jsp">
+			</forward>
+			<forward name="delete" path="/invoiceEdit.jsp">
+			</forward>
+			<forward name="deleteInvoice" path="/invoiceEditSelection.jsp">
+			</forward>			
+			<forward name="goToActionDisplay" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>			
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>
+		</action>
+		<action name="maintenanceAccountsForm" path="/maintenanceAccounts" scope="session" type="com.domgen.marketingbudgets.actions.MaintenanceAccountsAction" validate="true" input="/maintenanceAccounts.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="financeDivision" path="/maintenanceFinanceDivisions.jsp">
+			</forward>
+			<forward name="purchaseLedger" path="/maintenancePurchaseLedgers.jsp">
+			</forward>
+			<forward name="unit" path="/maintenanceUnits.jsp">
+			</forward>
+			<forward name="nature" path="/maintenanceNatures.jsp">
+			</forward>
+			<forward name="transactionType" path="/maintenanceTransactionTypes.jsp">
+			</forward>
+			<forward name="smaReference" path="/maintenanceSmaReferences.jsp">
+			</forward>
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>			
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>
+		</action>
+		<action name="maintenanceFinanceDivisionsForm" path="/maintenanceFinanceDivisions" scope="session" type="com.domgen.marketingbudgets.actions.MaintenanceFinanceDivisionsAction" validate="true" input="/maintenanceFinanceDivisions.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="cancelCreate" path="/maintenanceFinanceDivisions.jsp">
+			</forward>
+			<forward name="cancelEdit" path="/maintenanceFinanceDivisions.jsp">
+			</forward>
+			<forward name="confirm" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="displayYes" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="displayNo" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="confirmCreate" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="audit" path="/maintenanceFinanceDivisionAudit.jsp">
+			</forward>
+			<forward name="back" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>			
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>
+		</action>
+		<action name="maintenanceFinanceDivisionsAuditForm" path="/maintenanceFinanceDivisionsAudit" scope="session" type="com.domgen.marketingbudgets.actions.MaintenanceFinanceDivisionsAuditAction" validate="true" input="/maintenanceFinanceDivisionAudit.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="back" path="/maintenanceFinanceDivisions.jsp">
+			</forward>
+			<forward name="goToMaintenanceFinanceDivisions" path="/maintenanceFinanceDivisions.jsp">
+			</forward>
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>			
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>
+		</action>
+		<action name="maintenancePurchaseLedgersForm" path="/maintenancePurchaseLedgers" scope="session" type="com.domgen.marketingbudgets.actions.MaintenancePurchaseLedgersAction" validate="true" input="/maintenancePurchaseLedgers.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="displayYes" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="displayNo" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="delete" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="confirmCreate" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="back" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="cancelCreate" path="/maintenancePurchaseLedgers.jsp">
+			</forward>
+			<forward name="cancelEdit" path="/maintenancePurchaseLedgers.jsp">
+			</forward>
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>			
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>
+		</action>
+		<action name="maintenanceUnitsForm" path="/maintenanceUnits" scope="session" type="com.domgen.marketingbudgets.actions.MaintenanceUnitsAction" validate="true" input="/maintenanceUnits.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="displayYes" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="displayNo" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="delete" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="confirmCreate" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="back" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="cancelCreate" path="/maintenanceUnits.jsp">
+			</forward>
+			<forward name="cancelEdit" path="/maintenanceUnits.jsp">
+			</forward>
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>			
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>
+		</action>
+		<action name="maintenanceNaturesForm" path="/maintenanceNatures" scope="session" type="com.domgen.marketingbudgets.actions.MaintenanceNaturesAction" validate="true" input="/maintenanceNatures.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="displayYes" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="displayNo" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="delete" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="confirmCreate" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="back" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="cancelCreate" path="/maintenanceNatures.jsp">
+			</forward>
+			<forward name="cancelEdit" path="/maintenanceNatures.jsp">
+			</forward>		
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>			
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>
+		</action>
+		<action name="maintenanceTransactionTypesForm" path="/maintenanceTransactionTypes" scope="session" type="com.domgen.marketingbudgets.actions.MaintenanceTransactionTypesAction" validate="true" input="/maintenanceTransactionTypes.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="displayYes" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="displayNo" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="delete" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="confirmCreate" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="back" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="cancelCreate" path="/maintenanceTransactionTypes.jsp">
+			</forward>
+			<forward name="cancelEdit" path="/maintenanceTransactionTypes.jsp">
+			</forward>
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>			
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>
+		</action>
+		<action name="maintenanceSmaReferencesForm" path="/maintenanceSmaReferences" scope="session" type="com.domgen.marketingbudgets.actions.MaintenanceSmaReferencesAction" validate="true" input="/maintenanceSmaReferences.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="confirm" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="back" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="cancelCreate" path="/maintenanceSmaReferences.jsp">
+			</forward>
+			<forward name="cancelEdit" path="/maintenanceSmaReferences.jsp">
+			</forward>
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>			
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>
+		</action>
+		<action name="clientDetailsForm" path="/clientDetails" scope="session" type="com.domgen.marketingbudgets.actions.ClientDetailsAction" validate="true" input="/clientDetails.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="actionHistory" path="/actionHistory.jsp">
+			</forward>
+			<forward name="createAction" path="/createAction.jsp">
+			</forward>
+			<forward name="invoiceAudit" path="/invoiceAudit.jsp">
+			</forward>
+			<forward name="back" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="backInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="backInvoiceAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToActionDisplay" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>			
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToInvoiceAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>		
+			<forward name="goToMaintenanceSS" path="/maintenanceSS.jsp">
+			</forward>	
+			<forward name="goToBudgetsSelection" path="/budgetsSelection.jsp">
+			</forward>			
+		</action>
+		<action name="createActionForm" path="/createAction" scope="session" type="com.domgen.marketingbudgets.actions.CreateActionAction" validate="true" input="/createAction.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="confirm" path="/clientDetails.jsp">
+			</forward>
+			<forward name="back" path="/clientDetails.jsp">
+			</forward>
+			<forward name="goToClientDetails" path="/clientDetails.jsp">
+			</forward>
+			<forward name="goToActionDisplay" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>			
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToInvoiceAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>	
+			<forward name="goToMaintenanceSS" path="/maintenanceSS.jsp">
+			</forward>	
+			<forward name="goToBudgetsSelection" path="/budgetsSelection.jsp">
+			</forward>			
+		</action>
+		<action name="invoicesSearchForm" path="/invoicesSearch" scope="session" type="com.domgen.marketingbudgets.actions.InvoicesSearchAction" validate="true" input="/invoicesSearch.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="search" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="clientDetails" path="/clientDetails.jsp">
+			</forward>
+			<forward name="invoiceAudit" path="/invoiceAudit.jsp">
+			</forward>
+			<forward name="invoiceAuditADJ" path="/invoiceAudit.jsp">
+			</forward>
+			<forward name="budgetsAudit" path="/budgetsAudit.jsp">
+			</forward>
+			<forward name="invoiceAuditSel" path="/invoiceAudit.jsp">
+			</forward>
+			<forward name="goToActionDisplay" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>			
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToMaintenanceSS" path="/maintenanceSS.jsp">
+			</forward>	
+			<forward name="goToBudgetsSelection" path="/budgetsSelection.jsp">
+			</forward>
+		</action>
+		<action name="actionHistoryForm" path="/actionHistory" scope="session" type="com.domgen.marketingbudgets.actions.ActionHistoryAction" validate="true" input="/actionHistory.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="back" path="/clientDetails.jsp">
+			</forward>
+			<forward name="createAction" path="/createAction.jsp">
+			</forward>
+			<forward name="goToClientDetails" path="/clientDetails.jsp">
+			</forward>
+			<forward name="goToActionDisplay" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>			
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToInvoiceAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>	
+			<forward name="goToMaintenanceSS" path="/maintenanceSS.jsp">
+			</forward>	
+			<forward name="goToBudgetsSelection" path="/budgetsSelection.jsp">
+			</forward>			
+		</action>
+		<action name="invoiceAuditForm" path="/invoiceAudit" scope="session" type="com.domgen.marketingbudgets.actions.InvoiceAuditAction" validate="true" input="/invoiceAudit.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="originalInvoice" path="/originalInvoice.jsp">
+			</forward>
+			<forward name="back" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="backClientDetails" path="/clientDetails.jsp">
+			</forward>
+			<forward name="backInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="backInvoiceAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToClientDetails" path="/clientDetails.jsp">
+			</forward>
+			<forward name="goToActionDisplay" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>			
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="goToInvoiceAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToMaintenanceSS" path="/maintenanceSS.jsp">
+			</forward>	
+			<forward name="goToBudgetsSelection" path="/budgetsSelection.jsp">
+			</forward>			
+		</action>
+		<action name="originalInvoiceForm" path="/originalInvoice" scope="session" type="com.domgen.marketingbudgets.actions.OriginalInvoiceAction" validate="true" input="/originalInvoice.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+		 	<forward name="goToInvoiceAudit" path="/invoiceAudit.jsp">
+			</forward>
+			<forward name="back" path="/invoiceAudit.jsp">
+			</forward>
+			<forward name="goToActionDisplay" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>			
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToMaintenanceSS" path="/maintenanceSS.jsp">
+			</forward>
+			<forward name="goToBudgetsSelection" path="/budgetsSelection.jsp">
+			</forward>	
+		</action>
+		<action name="actionDisplayForm" path="/actionDisplay" scope="session" type="com.domgen.marketingbudgets.actions.ActionDisplayAction" validate="true" input="/actionDisplay.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="search" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="actionEdit" path="/actionEdit.jsp">
+			</forward>
+			<forward name="goToActionDisplay" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToMaintenanceSS" path="/maintenanceSS.jsp">
+			</forward>	
+			</action>
+		<action name="actionEditForm" path="/actionEdit" scope="session" type="com.domgen.marketingbudgets.actions.ActionEditAction" validate="true" input="/actionEdit.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="confirm" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="back" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="goToActionDisplay" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>	
+			<forward name="goToInvoicesAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToMaintenanceSS" path="/maintenanceSS.jsp">
+			</forward>				
+			</action>
+		<action name="maintenanceSSForm" path="/maintenanceSS" scope="session" type="com.domgen.marketingbudgets.actions.MaintenanceSSAction" validate="true" input="/maintenanceSS.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="accountHandler" path="/maintenanceSSAccountHMs.jsp">
+			</forward>
+			<forward name="accountManager" path="/maintenanceSSAccountHMs.jsp">
+			</forward>
+			<forward name="underwriting" path="/maintenanceSSAccountHMs.jsp">
+			</forward>
+			<forward name="salesSupport" path="/maintenanceSSAccountHMs.jsp">
+			</forward>
+			<forward name="account" path="/maintenanceSSAccounts.jsp">
+			</forward>
+			<forward name="adaytumUpload" path="/maintenanceSSAdaytumUpload.jsp">
+			</forward>
+			<forward name="goToActionDisplay" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToMaintenanceSS" path="/maintenanceSS.jsp">
+			</forward>
+			<forward name="goToBudgetsSelection" path="/budgetsSelection.jsp">
+			</forward>	
+		</action>
+		<action name="maintenanceSSAccountsForm" path="/maintenanceSSAccounts" scope="session" type="com.domgen.marketingbudgets.actions.MaintenanceSSAccountsAction" validate="true" input="/maintenanceSSAccounts.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="update" path="/maintenanceSSAccounts.jsp">
+			</forward>
+			<forward name="back" path="/maintenanceSS.jsp">
+			</forward>
+			<forward name="goToActionDisplay" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToMaintenanceSS" path="/maintenanceSS.jsp">
+			</forward>	
+			<forward name="goToBudgetsSelection" path="/budgetsSelection.jsp">
+			</forward>
+		</action>
+		<action name="maintenanceSSAccountHMsForm" path="/maintenanceSSAccountHMs" scope="session" type="com.domgen.marketingbudgets.actions.MaintenanceSSAccountHMsAction" validate="true" input="/maintenanceSSAccountHMs.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="update" path="/maintenanceSSAccountHMs.jsp">
+			</forward>
+			<forward name="confirmCreate" path="/maintenanceSSAccountHMs.jsp">
+			</forward>
+			<forward name="back" path="/maintenanceSS.jsp">
+			</forward>
+			<forward name="cancelCreate" path="/maintenanceSSAccountHMs.jsp">
+			</forward>
+			<forward name="cancelEdit" path="/maintenanceSSAccountHMs.jsp">
+			</forward>
+			<forward name="goToActionDisplay" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToMaintenanceSS" path="/maintenanceSS.jsp">
+			</forward>	
+			<forward name="goToBudgetsSelection" path="/budgetsSelection.jsp">
+			</forward>
+		</action>
+		<action name="invoiceAuthoriseSelectionForm" path="/invoiceAuthoriseSelection" scope="session" type="com.domgen.marketingbudgets.actions.InvoiceAuthoriseSelectionAction" validate="true" input="/invoiceAuthoriseSelection.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="update" path="/invoiceAuthorise.jsp">
+			</forward>
+			<forward name="search" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="clientDetails" path="/clientDetails.jsp">
+			</forward>
+			<forward name="invoiceAudit" path="/invoiceAudit.jsp">
+			</forward>
+			<forward name="invoiceAuditADJ" path="/invoiceAudit.jsp">
+			</forward>
+			<forward name="budgetsAudit" path="/budgetsAudit.jsp">
+			</forward>	
+			<forward name="goToActionDisplay" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="goToBudgetsSelection" path="/budgetsSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToMaintenanceSS" path="/maintenanceSS.jsp">
+			</forward>	
+		</action>
+		<action name="invoiceAuthoriseForm" path="/invoiceAuthorise" scope="session" type="com.domgen.marketingbudgets.actions.InvoiceAuthoriseAction" validate="true" input="/invoiceAuthorise.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="confirm" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="back" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToActionDisplay" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToMaintenanceSS" path="/maintenanceSS.jsp">
+			</forward>	
+			<forward name="goToBudgetsSelection" path="/budgetsSelection.jsp">
+			</forward>
+		</action>
+		<action name="invoiceAuthorisedSelectionForm" path="/invoiceAuthorisedSelection" scope="session" type="com.domgen.marketingbudgets.actions.InvoiceAuthorisedSelectionAction" validate="true" input="/invoiceAuthorisedSelection.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="search" path="/invoiceAuthorisedSelection.jsp">
+			</forward>		
+			<forward name="validate" path="/invoiceAuthorisedConfirm.jsp">
+			</forward>
+			<forward name="validateMultiple" path="/invoiceAuthorisedConfirm.jsp">
+			</forward>				
+			<forward name="validateError" path="/invoiceAuthorisedConfirm.jsp">
+			</forward>
+			<forward name="validateMultipleError" path="/invoiceAuthorisedConfirm.jsp">
+			</forward>
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>	
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>	
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>			
+		</action>
+		<action name="invoiceAuthorisedConfirmForm" path="/invoiceAuthorisedConfirm" scope="session" type="com.domgen.marketingbudgets.actions.InvoiceAuthorisedConfirmAction" validate="true" input="/invoiceAuthorisedConfirm.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="confirm" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="back" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToInvoiceAuthorisedSelection" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>	
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>			
+		</action>
+		<action name="errorForm" path="/error" scope="session" type="com.domgen.marketingbudgets.actions.ErrorAction" validate="true" input="/error.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/index.jsp">
+			</forward>
+			<forward name="goToActionDisplay" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>			
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToMaintenanceSS" path="/maintenanceSS.jsp">
+			</forward>		
+			<forward name="goToBudgetsSelection" path="/budgetsSelection.jsp">
+			</forward>	
+		</action>
+		<action name="budgetsSelectionForm" path="/budgetsSelection" scope="session" type="com.domgen.marketingbudgets.actions.BudgetsSelectionAction" validate="true" input="/budgetsSelection.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="edit" path="/budgetsEdit.jsp">
+			</forward>
+			<forward name="audit" path="/budgetsAuditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToMaintenanceSS" path="/maintenanceSS.jsp">
+			</forward>	
+			<forward name="goToBudgetsSelection" path="/budgetsSelection.jsp">
+			</forward>
+		</action>
+		<action name="budgetsEditForm" path="/budgetsEdit" scope="session" type="com.domgen.marketingbudgets.actions.BudgetsEditAction" validate="true" input="/budgetsEdit.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="confirm" path="/budgetsSelection.jsp">
+			</forward>
+			<forward name="cancel" path="/budgetsEdit.jsp">
+			</forward>
+			<forward name="back" path="/budgetsSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToMaintenanceSS" path="/maintenanceSS.jsp">
+			</forward>	
+			<forward name="goToBudgetsSelection" path="/budgetsSelection.jsp">
+			</forward>
+		</action>
+		<action name="budgetsAuditSelectionForm" path="/budgetsAuditSelection" scope="session" type="com.domgen.marketingbudgets.actions.BudgetsAuditSelectionAction"  validate="true" input="/budgetsAuditSelection.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="select" path="/budgetsAudit.jsp">
+			</forward>
+			<forward name="back" path="/budgetsSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToMaintenanceSS" path="/maintenanceSS.jsp">
+			</forward>	
+			<forward name="goToBudgetsSelection" path="/budgetsSelection.jsp">
+			</forward>	
+		</action>
+		<action name="budgetsAuditForm" path="/budgetsAudit" scope="session" type="com.domgen.marketingbudgets.actions.BudgetsAuditAction"  validate="true" input="/budgetsAudit.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="back" path="/budgetsAuditSelection.jsp">
+			</forward>
+			<forward name="backInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>			
+			<forward name="backInvoiceAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>	
+			<forward name="backBudgetsAuditSelection" path="/budgetsAuditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoiceAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToMaintenanceSS" path="/maintenanceSS.jsp">
+			</forward>	
+			<forward name="goToBudgetsSelection" path="/budgetsSelection.jsp">
+			</forward>
+			<forward name="goToBudgetsAuditSelection" path="/budgetsAuditSelection.jsp">
+			</forward>
+		</action>
+		<action name="invoiceValidatedSelectionForm" path="/invoiceValidatedSelection" scope="session" type="com.domgen.marketingbudgets.actions.InvoiceValidatedSelectionAction" validate="true" input="/invoiceValidatedSelection.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="search" path="/invoiceValidatedSelection.jsp">
+			</forward>	
+			<forward name="transferAll" path="/invoiceValidatedConfirm.jsp">
+			</forward>	
+			<forward name="transfer" path="/invoiceValidatedConfirm.jsp">
+			</forward>
+			<forward name="transferMultiple" path="/invoiceValidatedConfirm.jsp">
+			</forward>				
+			<forward name="transferError" path="/invoiceValidatedConfirm.jsp">
+			</forward>
+			<forward name="transferMultipleError" path="/invoiceValidatedConfirm.jsp">
+			</forward>
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>	
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>	
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>			
+		</action>
+		<action name="invoiceValidatedConfirmForm" path="/invoiceValidatedConfirm" scope="session" type="com.domgen.marketingbudgets.actions.InvoiceValidatedConfirmAction" validate="true" input="/invoiceValidatedConfirm.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="confirm" path="/invoiceValidatedSelection.jsp">
+			</forward>
+			<forward name="back" path="/invoiceValidatedSelection.jsp">
+			</forward>
+			<forward name="goToInvoiceAuthorisedSelection" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToMaintenanceAccounts" path="/maintenanceAccounts.jsp">
+			</forward>
+			<forward name="goToInvoiceEntry" path="/invoiceEntry.jsp">
+			</forward>
+			<forward name="goToInvoiceEditSelection" path="/invoiceEditSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthorised" path="/invoiceAuthorisedSelection.jsp">
+			</forward>
+			<forward name="goToInvoicesValidated" path="/invoiceValidatedSelection.jsp">
+			</forward>									
+		</action>
+		<action name="maintenanceSSAdaytumUploadForm" path="/maintenanceSSAdaytumUpload" scope="session" type="com.domgen.marketingbudgets.actions.MaintenanceSSAdaytumUploadAction" validate="true" input="/maintenanceSSAdaytumUpload.jsp">
+			<forward name="goToLogOut" path="/index.jsp">
+			</forward>
+			<forward name="error" path="/error.jsp">
+			</forward>
+			<forward name="uploadY" path="/maintenanceSS.jsp">
+			</forward>
+			<forward name="uploadN" path="/maintenanceSS.jsp">
+			</forward>
+			<forward name="back" path="/maintenanceSS.jsp">
+			</forward>
+			<forward name="goToActionDisplay" path="/actionDisplay.jsp">
+			</forward>
+			<forward name="goToInvoicesSearch" path="/invoicesSearch.jsp">
+			</forward>
+			<forward name="goToInvoicesAuthoriseSelection" path="/invoiceAuthoriseSelection.jsp">
+			</forward>
+			<forward name="goToMaintenanceSS" path="/maintenanceSS.jsp">
+			</forward>	
+			<forward name="goToBudgetsSelection" path="/budgetsSelection.jsp">
+			</forward>		
+		</action>
+
+	</action-mappings>
+
+	<!-- Message Resources -->
+	<message-resources parameter="resources.ApplicationResources"/>
+	
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+    <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,
+                                              /WEB-INF/validation.xml"/>
+    </plug-in>
+
+</struts-config>
